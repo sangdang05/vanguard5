@@ -1,0 +1,102 @@
+{
+    "name": "loshmis/vanguard",
+    "description": "Advanced PHP Login and User Management",
+    "keywords": [
+        "advanced",
+        "secure",
+        "login",
+        "user management",
+        "authentication",
+        "authorization",
+        "register"
+    ],
+    "authors": [
+        {
+            "name": "Milos Stojanovic",
+            "email": "stojanovic.loshmi@gmail.com",
+            "homepage": "https://mstojanovic.net",
+            "role": "Developer"
+        }
+    ],
+    "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/loshmis/laravel-countries"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "ext-json": "*",
+        "akaunting/setting": "^1.0",
+        "anhskohbo/no-captcha": "3.*",
+        "barryvdh/laravel-debugbar": "^3.5",
+        "barryvdh/laravel-ide-helper": "^2.9",
+        "fideloper/proxy": "^4.2",
+        "fruitcake/laravel-cors": "^1.0",
+        "genealabs/laravel-sign-in-with-apple": "^0.5.0",
+        "genealabs/laravel-socialiter": "^0.3.3",
+        "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.3",
+        "jenssegers/agent": "^2.5",
+        "lab404/laravel-impersonate": "^1.2",
+        "laravel/framework": "^8.0",
+        "laravel/sanctum": "^2.0",
+        "laravel/socialite": "^5.0",
+        "laravel/ui": "^3.0",
+        "laravelcollective/html": "^6.1",
+        "proengsoft/laravel-jsvalidation": "^4.4",
+        "spatie/laravel-query-builder": "^3.0",
+        "vanguardapp/activity-log": "^3.0.0",
+        "vanguardapp/announcements": "^3.0.0",
+        "vanguardapp/plugins": "^3.0.0",
+        "webpatser/laravel-countries": "dev-master"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^9.0",
+     
+		
+        "facade/ignition": "^2.3.6",
+        "nunomaduro/collision": "^5.0"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ],
+        "psr-4": {
+            "Vanguard\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
