@@ -22,6 +22,7 @@ class SachController extends ApiController
     {
 
         $sach = new Sach();
+        $sach->masach =$request->masach;
         $sach->tensach =$request->tensach;
         $sach->loai =$request->loai;
         $sach->soluong =$request->soluong;
@@ -31,10 +32,15 @@ class SachController extends ApiController
     }
     public function sua($id,Request $request)
     {
-       $sach = Sach::findOrFail($id);
-       $sach->update($request->all());
-       $sach->save();
-       return response()->json($sach);
+        $id = $request->id;
+        $sach = Sach::find($id);
+        $sach->masach =$request->masach;
+        $sach->tensach =$request->tensach;
+        $sach->loai =$request->loai;
+        $sach->soluong =$request->soluong;
+        $sach->tacgia =$request->tacgia;
+        $sach->save();
+        return new SachResource($sach);
     }
     public function xoa($id)
     {

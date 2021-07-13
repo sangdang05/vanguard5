@@ -21,7 +21,7 @@ class sinhvienController extends ApiController
     {
 
     }
-    public function themsinhvien(CreateSinhvienRequest $request)
+    public function themsinhvien(CreateSinhvienRequest $request) 
     {
 
         $sinhvien = new Sinhvien();

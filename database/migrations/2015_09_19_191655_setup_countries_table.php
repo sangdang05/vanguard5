@@ -10,7 +10,7 @@ class SetupCountriesTable extends Migration
      * Run the migrations.
      *
      * @return  void
-     */
+     */ 
     public function up()
     {
         // Creates the users table
