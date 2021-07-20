@@ -63,16 +63,22 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::get('/countries', 'CountriesController@index');
 });
-Route::get('/dssinhvien', 'SinhvienController@dssinhvien');
-Route::post('/thembinhluan', 'BinhluanController@thembinhluan');
 
+
+Route::get('/dssinhvien', 'SinhvienController@dssinhvien');
 Route::post('/themsinhvien', 'SinhvienController@themsinhvien');
 Route::post('/suasinhvien', 'SinhvienController@updatesinhvien');
 Route::delete('/xoasinhvien/{id}', 'SinhvienController@deletesinhvien');
-Route::get('/dssvid/{id}', 'SinhvienController@dssinhvienid');
+
 
 //cay canh
-Route::post('/themcay', 'CaycanhController@themcay');
+Route::post('/them', 'CaycanhController@themcay');
 Route::get('/dscay', 'CaycanhController@dscay');
-Route::delete('/xoacay/{id}', 'CaycanhController@xoacay');
-Route::post('/suacay', 'CaycanhController@suacay');
+Route::delete('xoa/{id}', 'CaycanhController@xoacay');
+Route::post('sua', 'CaycanhController@suacay');
+
+//sach
+Route::post('/themsach', 'SachController@them');
+Route::get('/dssach', 'SachController@danhsach');
+Route::delete('/xoasach/{id}', 'SachController@xoa');
+Route::post('/suasach', 'SachController@sua');

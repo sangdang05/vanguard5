@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSachTable extends Migration
+class CreateCaycanhTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateSachTable extends Migration
      */
     public function up()
     {
-        Schema::create('sach', function (Blueprint $table) {
-            $table->increments('id');
-            $table->int('masach');
-            $table->string('tensach', 255);
+        Schema::create('caycanh', function (Blueprint $table) {
+            $table->id();
+            $table->string('ten', 255);
             $table->string('loai', 255);
-            $table->int('soluong');
-            $table->string('tacgia', 255);
+            $table->Integer('namtrong');
+            $table->string('mota', 255);
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateSachTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sach');
+        Schema::dropIfExists('caycanh');
     }
 }

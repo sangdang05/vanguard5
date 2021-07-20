@@ -2,9 +2,9 @@
 
 namespace Vanguard\Http\Controllers\Api;
 use Vanguard\Http\Controllers\Api;
-use  Vanguard\Sach;
-use  Vanguard\Http\Resources\SachResource;
-use  Illuminate\Http\Request;
+use Vanguard\Sach;
+use Vanguard\Http\Resources\SachResource;
+use Illuminate\Http\Request;
 use auth;
 use Cache;
 /**
@@ -22,20 +22,18 @@ class SachController extends ApiController
     {
 
         $sach = new Sach();
-        $sach->masach =$request->masach;
-        $sach->tensach =$request->tensach;
+        $sach->ten =$request->ten;
         $sach->loai =$request->loai;
         $sach->soluong =$request->soluong;
         $sach->tacgia =$request->tacgia;
         $sach->save();
         return new SachResource($sach);
     }
-    public function sua($id,Request $request)
+    public function sua(Request $request)
     {
         $id = $request->id;
         $sach = Sach::find($id);
-        $sach->masach =$request->masach;
-        $sach->tensach =$request->tensach;
+        $sach->ten =$request->ten;
         $sach->loai =$request->loai;
         $sach->soluong =$request->soluong;
         $sach->tacgia =$request->tacgia;
@@ -52,7 +50,6 @@ class SachController extends ApiController
     {
        $ds= Sach::all();
        return SachResource::collection($ds);
-
     }
     /*public function dssinhvienid($id, Request $request)
     {

@@ -15,8 +15,8 @@ class SachResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'ma' => $this->ma,
-            'tensach' => $this->tensach,
+            'id' => $this->id,
+            'ten' => $this->ten,
             'loai' => $this->loai,
             'soluong' => $this->soluong,
             'tacgia' => $this->tacgia,

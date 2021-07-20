@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSinhvienTable extends Migration
+class CreateSachTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSinhvienTable extends Migration
      */
     public function up()
     {
-        Schema::create('sinhvien', function (Blueprint $table) {
-            $table->increments('id');
-            $table->int('masv');
-            $table->string('tensv', 50);
-            $table->string('gioitinh', 5);
-            $table->int('namsinh');
+        Schema::create('sach', function (Blueprint $table) {
+            $table->id();
+            $table->string('ten', 255);
+            $table->string('loai', 255);
+            $table->Integer('soluong');
+            $table->string('tacgia', 255);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSinhvienTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sinhvien');
+        Schema::dropIfExists('sach');
     }
 }

@@ -16,8 +16,7 @@ class CaycanhResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'macay' => $this->macay,
-            'tencay' => $this->tencay,
+            'ten' => $this->ten,
             'loai' => $this->loai,
             'namtrong' => $this->namtrong,
             'mota' => $this->mota,

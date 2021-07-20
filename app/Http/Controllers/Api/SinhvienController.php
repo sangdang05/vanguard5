@@ -2,12 +2,9 @@
 
 namespace Vanguard\Http\Controllers\Api;
 use Vanguard\Http\Controllers\Api;
-use  Vanguard\sinhvien;
-use  Vanguard\Http\Resources\sinhvienResource;
-use Vanguard\Http\Requests\Sinhvien\CreateSinhvienRequest;
-use Vanguard\Http\Requests\Sinhvien\RemoveSinhvienRequest;
-use Vanguard\Http\Requests\Sinhvien\UpdateSinhvienRequest;
-use  Illuminate\Http\Request;
+use Vanguard\sinhvien;
+use Vanguard\Http\Resources\sinhvienResource;
+use Illuminate\Http\Request;
 use auth;
 use Cache;
 /**
@@ -21,7 +18,7 @@ class sinhvienController extends ApiController
     {
 
     }
-    public function themsinhvien(CreateSinhvienRequest $request) 
+    public function themsinhvien(Request $request)
     {
 
         $sinhvien = new Sinhvien();
@@ -53,18 +50,5 @@ class sinhvienController extends ApiController
     {
        $dssv= Sinhvien::all();
        return sinhvienResource::collection($dssv);
-
-    }
-    public function dssinhvienid($id, Request $request)
-    {
-       $id = $request->id;
-       $sinhvien = Sinhvien::find($id);
-       if($sinhvien != null)
-       {
-            return new sinhvienResource($sinhvien);
-            Cache::flush();
-       }
-       return $this->respondWithSuccess();
-
     }
 }

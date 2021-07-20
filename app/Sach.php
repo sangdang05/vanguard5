@@ -4,9 +4,9 @@ namespace Vanguard;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sinhvien extends Model
+class Sach extends Model
 {
-    protected $table = 'cc_sach';
+    protected $table = 'sach';
 
     public $timestamps = true;
 }

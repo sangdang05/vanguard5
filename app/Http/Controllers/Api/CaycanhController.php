@@ -22,8 +22,7 @@ class CaycanhController extends ApiController
     {
 
         $caycanh = new Caycanh();
-        $caycanh->macay = $request->macay;
-        $caycanh->tencay =$request->tencay;
+        $caycanh->ten =$request->ten;
         $caycanh->loai =$request->loai;
         $caycanh->namtrong =$request->namtrong;
         $caycanh->mota =$request->mota;
@@ -34,8 +33,7 @@ class CaycanhController extends ApiController
     {
         $id = $request->id;
         $caycanh = Caycanh::find($id);
-        $caycanh->macay =$request->macay;
-        $caycanh->tencay =$request->tencay;
+        $caycanh->ten =$request->ten;
         $caycanh->loai =$request->loai;
         $caycanh->namtrong =$request->namtrong;
         $caycanh->mota =$request->mota;
